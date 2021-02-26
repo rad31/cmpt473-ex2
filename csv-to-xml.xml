@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System name="csv-to-xml">
+  <Parameters>
+    <Parameter id="0" name="IsInputArgumentProvided" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="1" name="DoesInputFileExist" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="2" name="IsInputFileValidXML" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="8" name="IsOutputArgumentProvided" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="9" name="DoesOutputFileExist" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="10" name="IsTagArgumentProvided" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="11" name="DoesTagExist" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="12" name="IsDelimeterArgumentProvided" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="14" name="IsLimitArgumentProvided" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="15" name="LimitSize" type="0">
+      <values>
+        <value>0</value>
+        <value>1</value>
+        <value>3</value>
+        <value>4</value>
+        <value>-1</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="16" name="IsIgnoreArgumentProvided" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="18" name="IsBufferArgumentProvided" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="20" name="IsEncodingArgumentProvided" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="21" name="IsEncodingValid" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="23" name="DoesIgnoreTagExist" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="24" name="BufferSize" type="0">
+      <values>
+        <value>0</value>
+        <value>500</value>
+        <value>1000</value>
+        <value>2000</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+  </Parameters>
+  <OutputParameters />
+  <Relations />
+  <Constraints>
+    <Constraint text="IsInputArgumentProvided = false =&gt; DoesInputFileExist = false">
+      <Parameters>
+        <Parameter name="IsInputArgumentProvided" />
+        <Parameter name="DoesInputFileExist" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="DoesInputFileExist = false =&gt; IsInputFileValidXML = false">
+      <Parameters>
+        <Parameter name="DoesInputFileExist" />
+        <Parameter name="IsInputFileValidXML" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="IsOutputArgumentProvided = false =&gt; DoesOutputFileExist = false">
+      <Parameters>
+        <Parameter name="IsOutputArgumentProvided" />
+        <Parameter name="DoesOutputFileExist" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="IsTagArgumentProvided = false =&gt; DoesTagExist = false">
+      <Parameters>
+        <Parameter name="IsTagArgumentProvided" />
+        <Parameter name="DoesTagExist" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="IsLimitArgumentProvided = false =&gt; LimitSize = -1">
+      <Parameters>
+        <Parameter name="IsLimitArgumentProvided" />
+        <Parameter name="LimitSize" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="IsIgnoreArgumentProvided = false =&gt; DoesIgnoreTagExist = false">
+      <Parameters>
+        <Parameter name="IsIgnoreArgumentProvided" />
+        <Parameter name="DoesIgnoreTagExist" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="IsBufferArgumentProvided = false =&gt; BufferSize = 1000">
+      <Parameters>
+        <Parameter name="IsBufferArgumentProvided" />
+        <Parameter name="BufferSize" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="IsEncodingArgumentProvided = false =&gt; IsEncodingValid = false">
+      <Parameters>
+        <Parameter name="IsEncodingArgumentProvided" />
+        <Parameter name="IsEncodingValid" />
+      </Parameters>
+    </Constraint>
+  </Constraints>
+  <Testset doi="2">
+    <Testcase TCNo="0">
+      <Value>1</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>0</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>0</Value>
+    </Testcase>
+    <Testcase TCNo="1">
+      <Value>2</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>0</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>500</Value>
+    </Testcase>
+    <Testcase TCNo="2">
+      <Value>3</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>0</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>1000</Value>
+    </Testcase>
+    <Testcase TCNo="3">
+      <Value>4</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>0</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>2000</Value>
+    </Testcase>
+    <Testcase TCNo="4">
+      <Value>5</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>1</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>0</Value>
+    </Testcase>
+    <Testcase TCNo="5">
+      <Value>6</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>1</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>500</Value>
+    </Testcase>
+    <Testcase TCNo="6">
+      <Value>7</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>1</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>1000</Value>
+    </Testcase>
+    <Testcase TCNo="7">
+      <Value>8</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>1</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>2000</Value>
+    </Testcase>
+    <Testcase TCNo="8">
+      <Value>9</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>3</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>0</Value>
+    </Testcase>
+    <Testcase TCNo="9">
+      <Value>10</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>3</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>500</Value>
+    </Testcase>
+    <Testcase TCNo="10">
+      <Value>11</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>3</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>1000</Value>
+    </Testcase>
+    <Testcase TCNo="11">
+      <Value>12</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>3</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>2000</Value>
+    </Testcase>
+    <Testcase TCNo="12">
+      <Value>13</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>4</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>0</Value>
+    </Testcase>
+    <Testcase TCNo="13">
+      <Value>14</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>4</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>500</Value>
+    </Testcase>
+    <Testcase TCNo="14">
+      <Value>15</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>4</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>1000</Value>
+    </Testcase>
+    <Testcase TCNo="15">
+      <Value>16</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>4</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>2000</Value>
+    </Testcase>
+    <Testcase TCNo="16">
+      <Value>17</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>-1</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>0</Value>
+    </Testcase>
+    <Testcase TCNo="17">
+      <Value>18</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>-1</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>500</Value>
+    </Testcase>
+    <Testcase TCNo="18">
+      <Value>19</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>-1</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>1000</Value>
+    </Testcase>
+    <Testcase TCNo="19">
+      <Value>20</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>-1</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>2000</Value>
+    </Testcase>
+    <Testcase TCNo="20">
+      <Value>21</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>-1</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>1000</Value>
+    </Testcase>
+  </Testset>
+  <Header>
+    <Value />
+    <Value>ISINPUTARGUMENTPROVIDED</Value>
+    <Value>DOESINPUTFILEEXIST</Value>
+    <Value>ISINPUTFILEVALIDXML</Value>
+    <Value>ISOUTPUTARGUMENTPROVIDED</Value>
+    <Value>DOESOUTPUTFILEEXIST</Value>
+    <Value>ISTAGARGUMENTPROVIDED</Value>
+    <Value>DOESTAGEXIST</Value>
+    <Value>ISDELIMETERARGUMENTPROVIDED</Value>
+    <Value>ISLIMITARGUMENTPROVIDED</Value>
+    <Value>LIMITSIZE</Value>
+    <Value>ISIGNOREARGUMENTPROVIDED</Value>
+    <Value>ISBUFFERARGUMENTPROVIDED</Value>
+    <Value>ISENCODINGARGUMENTPROVIDED</Value>
+    <Value>ISENCODINGVALID</Value>
+    <Value>DOESIGNORETAGEXIST</Value>
+    <Value>BUFFERSIZE</Value>
+  </Header>
+  <Stat-Data>
+    <ExecutionTime>0.013</ExecutionTime>
+    <MaxDomainSize>5</MaxDomainSize>
+    <MinDomainSize>2</MinDomainSize>
+    <TotalNoOfCombination>622</TotalNoOfCombination>
+    <TotalNoOfTests>21</TotalNoOfTests>
+    <Algorithm>IPOG</Algorithm>
+  </Stat-Data>
+</System>
+
