@@ -1,18 +1,20 @@
-<person>
-    <name>John</name>
-    <age>30</name>
-    <height>180</height>
-    <weight>75</weight>
-</person>
-<person>
-    <name>Jane</name>
-    <age>40</name>
-    <height>160</height>
-    <weight>55</weight>
-</person>
-<person>
-    <name>Joe</name>
-    <age>20</name>
-    <height>175</height>
-    <weight>70</weight>
-</person>
+<people>
+    <person>
+        <name>John</name>
+        <age>30</age>
+        <height>180</height>
+        <weight>75</weight>
+    </person>
+    <person>
+        <name>Jane</name>
+        <age>40</age>
+        <height>160</height>
+        <weight>55</weight>
+    </person>
+    <person>
+        <name>Joe</name>
+        <age>20</age>
+        <height>175</height>
+        <weight>70</weight>
+    </person>
+</people>
