@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/usr/local/bin/xml2csv", line 11, in <module>
+    load_entry_point('xmlutils==1.4.1', 'console_scripts', 'xml2csv')()
+  File "/usr/local/lib/python3.8/dist-packages/xmlutils-1.4.1-py3.8.egg/xmlutils/console.py", line 66, in run_xml2csv
+  File "/usr/local/lib/python3.8/dist-packages/xmlutils-1.4.1-py3.8.egg/xmlutils/xml2csv.py", line 29, in __init__
+  File "/usr/lib/python3.8/xml/etree/ElementTree.py", line 1248, in iterparse
+    source = open(source, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: './no-file.xml'

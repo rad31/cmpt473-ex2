@@ -1,0 +1,9 @@
+xml2csv
+    --help for help
+
+    
+FILE --output OUTPUT_FILE --tag TAG
+               [--delimiter DELIMITER] [--ignore IGNORE [IGNORE ...]]
+               [--noheader] [--encoding ENCODING] [--limit LIMIT]
+               [--buffer_size BUFFER_SIZE] [--noquotes]
+xml2csv: error: the following arguments are required: --output, --tag

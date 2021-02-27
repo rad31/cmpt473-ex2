@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/usr/local/bin/xml2csv", line 11, in <module>
+    load_entry_point('xmlutils==1.4.1', 'console_scripts', 'xml2csv')()
+  File "/usr/local/lib/python3.8/dist-packages/xmlutils-1.4.1-py3.8.egg/xmlutils/console.py", line 67, in run_xml2csv
+  File "/usr/local/lib/python3.8/dist-packages/xmlutils-1.4.1-py3.8.egg/xmlutils/xml2csv.py", line 82, in convert
+  File "/usr/lib/python3.8/xml/etree/ElementTree.py", line 1233, in iterator
+    root = pullparser._close_and_return_root()
+  File "/usr/lib/python3.8/xml/etree/ElementTree.py", line 1280, in _close_and_return_root
+    root = self._parser.close()
+xml.etree.ElementTree.ParseError: no element found: line 6, column 0

@@ -1,0 +1,7 @@
+xml2csv
+    --help for help
+
+    
+
+
+Wrote 3 records to ./TestOutput/Files/Test2.csv
